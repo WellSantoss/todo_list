@@ -4,10 +4,39 @@ const inputTodo = document.querySelector('.new #new-todo');
 const btnAdd = document.querySelector('.new a');
 inputTodo.focus();
 
+function isEmpty() {
+	const infoArray = todoArray.map((item) => {
+		return item.state;
+	});
+
+	if (infoArray.includes('done')) {
+		document.querySelector('div.done').classList.add('active');
+	}
+	else {
+		document.querySelector('div.done').classList.remove('active');
+	}
+
+	if (infoArray.includes('todo')) {
+		document.querySelector('div.todo').classList.add('active');
+	}
+	else {
+		document.querySelector('div.todo').classList.remove('active');
+	}
+
+	if (infoArray.includes('todo') && infoArray.includes('done')) {
+		document.querySelector('hr').classList.add('active');
+	}
+	else {
+		document.querySelector('hr').classList.remove('active');
+	}
+}
+
+// Recebe os dados do localStorage
 function getStorage() {
 	return JSON.parse(localStorage.getItem('todoList')) || [];
 }
 
+// Envia os dados ao localStorage
 function setStorage(todo) {
 	localStorage.setItem('todoList', JSON.stringify(todo));
 }
@@ -98,6 +127,7 @@ function addTodo(item) {
 
 // Limpa o HTML e readiciona os todo's
 function reloadig() {
+	isEmpty();
 	todoContainer.innerHTML = '';
 	doneContainer.innerHTML = '';
 

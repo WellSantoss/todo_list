@@ -60,9 +60,30 @@ h1 {
    animation: rotateGrow 0.4s forwards;
 }
 
+.done{
+   display: none;
+}
+
+.done.active{
+   display: block;
+}
+
+.todo{
+   display: none;
+}
+
+.todo.active{
+   display: block;
+}
+
 hr {
-   max-width: 520px;
+   max-width: 580px;
    margin: 17px auto 20px auto;
+   display: none;
+}
+
+hr.active{
+   display: block;
 }
 
 h4{
@@ -74,6 +95,7 @@ ul li {
    align-items: center;
    max-width: 560px;
    margin: 10px auto 0 auto;
+   
 }
 
 ul li p {
@@ -87,4 +109,9 @@ ul li img:last-child{
 
 ul li img {
    cursor: pointer;
+   animation: unGrow 0.4s forwards;
+}
+
+ul li img:hover {
+   animation: grow 0.4s forwards;
 }
