@@ -4,28 +4,15 @@ const inputTodo = document.querySelector('.new #new-todo');
 const btnAdd = document.querySelector('.new a');
 inputTodo.focus();
 
-let todoArray = [
-	{
-		text: 'Ir ao mercado',
-		state: 'todo',
-	},
-	{
-		text: 'Fazer compras',
-		state: 'todo',
-	},
-	{
-		text: 'Cozinhar',
-		state: 'todo',
-	},
-	{
-		text: 'Jogar',
-		state: 'todo',
-	},
-	{
-		text: 'Estudar',
-		state: 'done',
-	}
-];
+function getStorage() {
+	return JSON.parse(localStorage.getItem('todoList')) || [];
+}
+
+function setStorage(todo) {
+	localStorage.setItem('todoList', JSON.stringify(todo));
+}
+
+let todoArray = getStorage();
 
 inputTodo.addEventListener('keyup', (e) => {
 	if (e.keyCode == '13') {
@@ -117,6 +104,8 @@ function reloadig() {
 	todoArray.forEach((item) => {
 		addTodo(item);
 	});
+
+	setStorage(todoArray);
 }
 
 reloadig();
