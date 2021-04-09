@@ -1,0 +1,35 @@
+@keyframes rotateGrow {
+   from {
+      transform: rotateZ(0) perspective(0) translate3d(0);
+   }
+   to {
+      transform: rotateZ(90deg) perspective(500px) translate3d(0, 0, 100px);
+   }
+}
+
+@keyframes unRotateGrow {
+   from {
+      transform: rotateZ(90deg) perspective(500px) translate3d(0, 0, 100px);
+   }
+   to {
+      transform: rotateZ(0) perspective(0) translate3d(0);
+   }
+}
+
+@keyframes grow {
+   from {
+      transform: perspective(0) translate3d(0);
+   }
+   to {
+      transform: perspective(600px) translate3d(0, 0, 100px);
+   }
+}
+
+@keyframes unGrow {
+   from {
+      transform: perspective(600px) translate3d(0, 0, 100px);
+   }
+   to {
+      transform: perspective(0) translate3d(0);
+   }
+}
