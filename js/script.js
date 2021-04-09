@@ -14,6 +14,14 @@ let todoArray = [
 		state: 'todo',
 	},
 	{
+		text: 'Cozinhar',
+		state: 'todo',
+	},
+	{
+		text: 'Jogar',
+		state: 'todo',
+	},
+	{
 		text: 'Estudar',
 		state: 'done',
 	}
@@ -32,6 +40,13 @@ function getIndex(info) {
 	});
 
 	return infoArray.indexOf(info);
+}
+
+// Edita o todo
+function editTodo(info) {
+	deleteTodo(info);
+	inputTodo.value = info;
+	inputTodo.focus();
 }
 
 // Deleta o todo
@@ -74,7 +89,7 @@ function createTodo(text, state) {
 	li.innerHTML = `
 		<img onclick="changeState('${text}');" src="./assets/${state}.svg">
 		<p>${text}</p>
-		<img src="./assets/edit.svg" alt="Editar">
+		<img onclick="editTodo('${text}');" src="./assets/edit.svg" alt="Editar">
 		<img onclick="deleteTodo('${text}');" src="./assets/delete.svg" alt="Excluir">`;
 
 	return li;
