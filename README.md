@@ -6,7 +6,7 @@ Uma simples lista de tarefas desenvolvida com Javascript como forma de estudo. Ã
 ---
 
 ## Resultado
-[![Image from Gyazo](https://i.gyazo.com/e92a23e3a41f9ffcf7334935e54f5565.gif)](https://gyazo.com/e92a23e3a41f9ffcf7334935e54f5565)
+[![Image from Gyazo](https://i.gyazo.com/06fdd929c8146cf149f28055b7bff131.gif)](https://gyazo.com/06fdd929c8146cf149f28055b7bff131)
 
 Resultado final: https://wellsantoss.github.io/todo_list/
 
