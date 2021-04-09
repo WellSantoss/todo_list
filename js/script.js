@@ -25,21 +25,33 @@ inputTodo.addEventListener('keyup', (e) => {
 	}
 });
 
-// Muda o estado do todo
-function changeState(info) {
+// Retorna o index do array correspondente ao arg
+function getIndex(info) {
 	const infoArray = todoArray.map((item) => {
 		return item.text;
 	});
 
-	const infoIndex = infoArray.indexOf(info);
+	return infoArray.indexOf(info);
+}
 
-	console.log(todoArray[infoIndex].state);
+// Deleta o todo
+function deleteTodo(info) {
+	const i = getIndex(info);
 
-	if (todoArray[infoIndex].state == 'todo') {
-		todoArray[infoIndex].state = 'done';
+	todoArray.splice(i, 1);
+
+	reloadig();
+}
+
+// Muda o estado do todo
+function changeState(info) {
+	const i = getIndex(info);
+
+	if (todoArray[i].state == 'todo') {
+		todoArray[i].state = 'done';
 	}
-	else if (todoArray[infoIndex].state == 'done') {
-		todoArray[infoIndex].state = 'todo';
+	else if (todoArray[i].state == 'done') {
+		todoArray[i].state = 'todo';
 	}
 
 	reloadig();
@@ -62,8 +74,8 @@ function createTodo(text, state) {
 	li.innerHTML = `
 		<img onclick="changeState('${text}');" src="./assets/${state}.svg">
 		<p>${text}</p>
-		<img class="handle" src="./assets/edit.svg" alt="Editar">
-		<img class="handle" src="./assets/delete.svg" alt="Excluir">`;
+		<img src="./assets/edit.svg" alt="Editar">
+		<img onclick="deleteTodo('${text}');" src="./assets/delete.svg" alt="Excluir">`;
 
 	return li;
 }
