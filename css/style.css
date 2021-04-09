@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@500&display=swap");
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
 
 body {
    font-family: "Roboto", sans-serif;
@@ -88,6 +92,7 @@ hr.active{
 
 h4{
    font-size: 14px;
+   font-weight: 500;
 }
 
 ul li {
