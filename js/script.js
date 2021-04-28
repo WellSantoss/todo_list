@@ -139,3 +139,10 @@ function reloadig() {
 }
 
 reloadig();
+
+const toggleDark = document.querySelector('input[type="checkbox"]');
+const html = document.documentElement;
+
+toggleDark.addEventListener('change', () => {
+	html.classList.toggle('dark');
+});

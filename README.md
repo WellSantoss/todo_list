@@ -13,7 +13,11 @@ Resultado final: https://wellsantoss.github.io/todo_list/
 ---
 
 ## Tecnologias utilizadas
-Utilizei as seguintes tecnologias durante desenvolvimento:
 - HTML5;
 - CSS3;
 - JavaScript;
+
+---
+
+## Features
+- [x] Dark mode;

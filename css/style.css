@@ -1,3 +1,21 @@
+:root {
+   --black: #212121; 
+   --gray: #828282;
+   --white: #FFF;
+   --whiteipt: #FFF; 
+}
+
+.dark:root{
+   --black: #FFF; 
+   --gray: #828282;
+   --white: #212121;
+   --whiteipt: #2B2B2B; 
+}
+
+.dark {
+   transition: .3s;
+}
+
 *{
    margin: 0;
    padding: 0;
@@ -6,6 +24,8 @@
 
 body {
    font-family: "Roboto", sans-serif;
+   color: var(--black);
+   background-color: var(--white);
 }
 
 .container {
@@ -38,6 +58,8 @@ h1 {
    outline: none;
    flex: 1;
    margin-right: 5px;
+   background-color: var(--whiteipt);
+   color: var(--black);
 }
 
 .new input:focus {
@@ -84,6 +106,7 @@ hr {
    max-width: 580px;
    margin: 17px auto 20px auto;
    display: none;
+   border: 1px solid var(--gray);
 }
 
 hr.active{
@@ -122,6 +145,6 @@ ul li img:hover {
 }
 
 .done ul li p{
-   color: gray;
+   color: var(--gray);
    text-decoration: line-through;
 }
